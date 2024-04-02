@@ -20,8 +20,36 @@ console.log(result2);      // ['choose', 'words', 'only']
 *******************************************************************************/
 
 function myFilter(array, cb) {
-    // Your code here 
+    // Your code here
+    const resultArray = [];
+    for (let value of array){
+        const metCondition = cb(value)
+        if (metCondition) {
+            resultArray.push(value)
+        }
+    }
+    return resultArray;
 }
+
+// let result1 = myFilter([5, 7, 4, 3, 8], function (n) {
+//     return n % 2 === 0;
+// });
+// console.log(result1);       // [ 4, 8 ]
+
+// let result2 = myFilter(['choose', 'big', 'words', 'only'], function (s) {
+//     return s.length > 3;
+// });
+// console.log(result2);      // ['choose', 'words', 'only']
+
+//myexample:
+
+let result3 = myFilter(["panda", "wyl", "country", "morgan", "wallen", "sam", "hunt", "book"], function (w) {
+    return w.length > 4
+})
+console.log(result3);
+
+
+
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
