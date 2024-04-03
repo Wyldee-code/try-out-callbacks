@@ -23,7 +23,29 @@ console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 
 function myEvery(array, cb) {
     // Your code here
+// iterate through each element of the array
+    for (let element of array) {
+        // if element doesnt satisfy the condition return false
+        if (!cb(element)){
+        return false
+      }
+    }
+    // if it does, return true
+    return true
 }
+
+let isEven = function (num) {
+    return num % 2 === 0;
+};
+
+let hasO = function(string) {
+    return string.includes('o');
+};
+
+console.log(myEvery([4, 8, 6, 10], isEven));            // true
+console.log(myEvery([4, 7, 6, 10], isEven));            // false
+console.log(myEvery(['book', 'door'], hasO));           // true
+console.log(myEvery(['book', 'door', 'pen'], hasO));    // false
 
 /*****************DO NOT MODIFY ANYTHING UNDER THIS  LINE**********************/
 try {
